@@ -11,7 +11,8 @@ var options = {
   appid: null,
   channel: null,
   uid: null,
-  token: null
+  token: null,
+  youtubeUrl: null
 };
 
 // the demo can auto join channel with params in url
@@ -20,7 +21,8 @@ $(() => {
   options.appid = urlParams.get("appid");
   options.channel = urlParams.get("channel");
   options.token = urlParams.get("token");
-  console.log(options);
+  options.youtubeUrl = urlParams.get("yurl");
+  //console.log(options);
   if (options.appid && options.channel) {
     join();
   }
