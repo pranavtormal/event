@@ -75,6 +75,9 @@ async function join() {
   // publish local tracks to channel
   await client.publish(Object.values(localTracks));
   console.log("publish success");
+  //alert(options.youtubeUrl);
+  $('#ytube_ref').attr('href',options.youtubeUrl);
+  $('#ytube_ref')[0].click();
 }
 
 async function leave() {
@@ -125,7 +128,6 @@ function handleUserPublished(user, mediaType) {
   remoteUsers[id] = user;
   subscribe(user, mediaType);
 }
-
 function handleUserUnpublished(user) {
   const id = user.uid;
   delete remoteUsers[id];
